@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="weatherCityName" parent="TextAppearance.AppCompat">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="weatherCityDate" parent="TextAppearance.AppCompat">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="weatherCardTitle" parent="TextAppearance.AppCompat">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="weatherCardContent" parent="TextAppearance.AppCompat">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--    SENIOR      -->
+    <style name="weatherCityName.senior">
+        <item name="android:textSize">60sp</item>
+    </style>
+
+    <style name="weatherCityDate.senior">
+        <item name="android:textSize">35sp</item>
+    </style>
+
+    <style name="weatherCardTitle.senior">
+        <item name="android:textSize">30sp</item>
+
+    </style>
+
+    <style name="weatherCardContent.senior">
+        <item name="android:textSize">42sp</item>
+    </style>
+
+    <style name="buttonSenior">
+        <item name="android:textSize">50sp</item>
+        <item name="android:paddingVertical">20dp</item>
+        <item name="android:layout_marginHorizontal">25dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

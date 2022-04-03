@@ -1,5 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <!--    MAIN  -->
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.weatherapp.fragments.MainFragment">
+
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_preferencesFragment"
+            app:destination="@id/preferencesFragment" />
+    </fragment>
+
+    <!--    PREFERENCES  -->
+    <fragment
+        android:id="@+id/preferencesFragment"
+        android:name="com.example.weatherapp.fragments.PreferencesFragment">
+    </fragment>
+
+    <!--    SEARCH  -->
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.weatherapp.fragments.SearchFragment">
+
+        <action
+            android:id="@+id/action_searchFragment_to_loadingFragment"
+            app:destination="@id/loadingFragment" />
+
+        <action
+            android:id="@+id/action_searchFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+    <!--    LOADING  -->
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.example.weatherapp.fragments.LoadingFragment">
+
+        <action
+            android:id="@+id/action_loadingFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+
+        <action
+            android:id="@+id/action_loadingFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+    </fragment>
+
+    <!--    WEATHER  -->
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.example.weatherapp.fragments.WeatherFragment">
+
+        <action
+            android:id="@+id/action_weatherFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
 
 </navigation>

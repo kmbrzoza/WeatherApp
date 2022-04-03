@@ -18,7 +18,7 @@ object WeatherRetrofitInstance {
                     .newBuilder()
                     .addPathSegment("weather")
                     .addQueryParameter("appid", BuildConfig.OpenWeatherMapApiKey)
-                    .addQueryParameter("lang", "pl")
+                    .addQueryParameter("lang", "en")
                     .addQueryParameter("units", "metric")
                     .build()
                 it.proceed(
