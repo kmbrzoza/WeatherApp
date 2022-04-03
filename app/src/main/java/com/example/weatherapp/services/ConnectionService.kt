@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 
+// Service that checks if there is network connection
 class ConnectionService {
     companion object {
         fun isNetworkConnected(context: Context): Boolean {

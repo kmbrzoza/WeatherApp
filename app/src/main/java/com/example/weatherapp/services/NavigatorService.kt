@@ -6,6 +6,7 @@ import com.example.weatherapp.R
 
 private const val seniorModeKey = "seniorMode"
 
+// Service that returns fragment id which depends if the senior mode is selected
 class NavigatorService {
     companion object {
         fun mainLayoutId(activity: Activity?): Int {
@@ -13,14 +14,6 @@ class NavigatorService {
                 R.layout.fragment_senior_main
             } else {
                 R.layout.fragment_main
-            }
-        }
-
-        fun searchLayoutId(activity: Activity?): Int {
-            return if (isSeniorMode(activity)) {
-                R.layout.fragment_senior_search
-            } else {
-                R.layout.fragment_search
             }
         }
 
@@ -32,7 +25,7 @@ class NavigatorService {
             }
         }
 
-        fun isSeniorMode(activity: Activity?): Boolean {
+        private fun isSeniorMode(activity: Activity?): Boolean {
             if (activity == null) {
                 return false
             }

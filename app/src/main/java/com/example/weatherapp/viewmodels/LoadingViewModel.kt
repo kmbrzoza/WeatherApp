@@ -16,6 +16,7 @@ class LoadingViewModel(application: Application) : AndroidViewModel(application)
             return _cityWeatherInfo
         }
 
+    // gets weather info for city
     fun getCityWeatherInfo(cityName: String) {
         viewModelScope.launch {
             val weatherInfo = WeatherRepository.getCityWeatherInfo(cityName)

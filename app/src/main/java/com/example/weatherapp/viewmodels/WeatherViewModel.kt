@@ -17,6 +17,7 @@ class WeatherViewModel(application: Application) : AndroidViewModel(application)
             return _bitmapWeatherImage
         }
 
+    // Gets wheater bitmap image that depends on iconId using openweathermap url
     fun getWeatherBitmapImage(iconId: String) {
         val url = getWeatherImageUrl(iconId)
         val thread = Thread {
@@ -31,14 +32,17 @@ class WeatherViewModel(application: Application) : AndroidViewModel(application)
         thread.start()
     }
 
+    // formats date based on timespan
     fun getFormattedDateTimeBasedOnTimeStamp(timeSpanSeconds: Long): String {
         return getFormattedDate(getDateBasedOnTimeStamp(timeSpanSeconds))
     }
 
+    // formats time based on timespan
     fun getFormattedTimeBasedOnTimeStamp(timeSpanSeconds: Long): String {
         return getFormattedTime(getDateBasedOnTimeStamp(timeSpanSeconds))
     }
 
+    // gets date based on timespan
     private fun getDateBasedOnTimeStamp(timeSpanSeconds: Long): Date {
         return Date(timeSpanSeconds * 1000)
     }

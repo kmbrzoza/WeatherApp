@@ -30,26 +30,30 @@ class WeatherFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Getting weather from arguments
         val weather = arguments?.get("weather") as Weather?
 
         if (weather == null) {
             Toast.makeText(activity, "Weather not found!", Toast.LENGTH_LONG).show()
-            backToSearchFragment(view)
+            backToMainFragment(view)
             return
         }
 
+        // If user click back (android button) then return to main fragment
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-            backToSearchFragment(view)
+            backToMainFragment(view)
         }
 
+        // Creating viewmodel
         viewModel = WeatherViewModel((requireNotNull(this.activity).application))
 
+        // Setting view
         view.findViewById<TextView>(R.id.weather_main_title).text = weather.name
 
         val date = viewModel.getFormattedDateTimeBasedOnTimeStamp(weather.dt + weather.timezone)
         view.findViewById<TextView>(R.id.weather_main_content).text = date
 
-        val temperature = "${weather.main.temp} °C"
+        val temperature = "${weather.main.temp.toInt()} °C"
         view.findViewById<TextView>(R.id.weather_temperature_content).text = temperature
 
         val pressure = "${weather.main.pressure} hPa"
@@ -77,7 +81,7 @@ class WeatherFragment : Fragment() {
         viewModel.getWeatherBitmapImage(weather.weather.first().icon)
     }
 
-    private fun backToSearchFragment(view: View) {
-        view.findNavController().navigate(R.id.action_weatherFragment_to_searchFragment)
+    private fun backToMainFragment(view: View) {
+        view.findNavController().navigate(R.id.action_weatherFragment_to_mainFragment)
     }
 }

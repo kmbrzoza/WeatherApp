@@ -38,7 +38,7 @@
     </style>
 
     <style name="weatherCardTitle.senior">
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">28sp</item>
 
     </style>
 
@@ -46,11 +46,16 @@
         <item name="android:textSize">42sp</item>
     </style>
 
-    <style name="buttonSenior">
-        <item name="android:textSize">50sp</item>
-        <item name="android:paddingVertical">20dp</item>
+    <style name="button">
         <item name="android:layout_marginHorizontal">25dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/roundebutton</item>
+    </style>
+
+    <style name="button.senior">
+        <item name="android:textSize">50sp</item>
+        <item name="android:paddingVertical">12dp</item>
     </style>
 </resources>

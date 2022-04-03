@@ -201,10 +201,6 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <TextView
-                        style="@style/weatherCardTitle.senior"
-                        android:text="@string/description" />
-
                     <ImageView
                         android:id="@+id/weather_description_image"
                         android:layout_width="match_parent"
